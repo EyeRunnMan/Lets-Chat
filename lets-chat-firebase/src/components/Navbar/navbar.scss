@@ -1,0 +1,82 @@
+@use "../../stylesheets/partials/mixins";
+
+.navbar {
+   background-color: transparent;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 2em 3em;
+
+   & a {
+      text-decoration: none;
+   }
+   &__heading {
+      margin: 0;
+      @include mixins.respond(desktop) {
+         font-size: 4.8rem;
+      }
+      @include mixins.respond(tablet) {
+         font-size: 4.2rem;
+      }
+      @include mixins.respond(mobile) {
+         font-size: 3.2rem;
+      }
+   }
+
+   &__nav-icons {
+      display: flex;
+      gap: 1em;
+
+      @include mixins.respond(tablet) {
+         display: none;
+      }
+
+      &-alt {
+         display: none;
+         @include mixins.respond(tablet) {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            gap: 1em;
+            margin-top: 1em;
+         }
+      }
+   }
+
+   &__icon {
+      @mixin nav-icons-mx {
+         display: block;
+         width: 5em;
+         aspect-ratio: 1/1;
+         &.active {
+            background-color: red;
+         }
+         @include mixins.respond(tablet) {
+            width: 4em;
+         }
+         @include mixins.respond(mobile) {
+            width: 3em;
+         }
+      }
+      &-info {
+         @include nav-icons-mx;
+         mask: url(../../assets/svgs/AboutIcon.svg);
+         mask-size: 100%;
+      }
+      &-chat {
+         @include nav-icons-mx;
+         mask: url(../../assets/svgs/ChatIcon.svg);
+         mask-size: 100%;
+      }
+      &-account {
+         @include nav-icons-mx;
+         mask: url(../../assets/svgs/UserIcon.svg);
+         mask-size: 100%;
+      }
+      &-theme {
+         @include nav-icons-mx;
+         mask: url(../../assets/svgs/ThemeIcon.svg);
+         mask-size: 100%;
+      }
+   }
+}

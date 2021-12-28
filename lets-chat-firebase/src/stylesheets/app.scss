@@ -1,1 +1,11 @@
 @use "../assets/fonts/fira-code/fira_code.scss";
+@use "./themes.scss";
+@use "./partials/reset";
+
+html {
+   font-size: 62.5%;
+}
+body {
+   background-color: black;
+   font-family: Fira Code;
+}

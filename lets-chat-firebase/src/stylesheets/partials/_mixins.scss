@@ -1,0 +1,33 @@
+@mixin color-modifiers($theme) {
+   @each $type, $map in $theme {
+      @each $name, $hex in $map {
+         @if $type== "bg" {
+            &-#{$name} {
+               background-color: $hex;
+            }
+         } @else {
+            &-#{$name} {
+               color: $hex;
+            }
+         }
+      }
+   }
+}
+
+@mixin respond($breakpoint) {
+   @if $breakpoint==desktop {
+      @media only screen and (min-width: 1000px) {
+         @content;
+      }
+   }
+   @if $breakpoint==tablet {
+      @media only screen and (max-width: 1000px) {
+         @content;
+      }
+   }
+   @if $breakpoint==mobile {
+      @media only screen and (max-width: 480px) {
+         @content;
+      }
+   }
+}

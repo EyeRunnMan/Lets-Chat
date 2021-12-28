@@ -1,0 +1,6 @@
+@use "./partials/colors";
+@use "./partials/mixins";
+
+.dark {
+   @include mixins.color-modifiers(colors.$dark);
+}

@@ -1,0 +1,29 @@
+.chat-bar {
+   display: flex;
+   align-items: center;
+   padding: 1em;
+   gap: 1em;
+   cursor: pointer;
+   &:hover {
+      opacity: 0.5;
+   }
+   &__img {
+      width: 6em;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+   }
+   &__txt-container {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      gap: 2em;
+   }
+   &__name {
+      align-self: flex-end;
+      font-weight: bold;
+      font-size: 1.8rem;
+   }
+   &__msg {
+      font-size: 1.6rem;
+   }
+}

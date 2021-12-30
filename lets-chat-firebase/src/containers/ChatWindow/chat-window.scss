@@ -1,5 +1,8 @@
 .chat-window {
    display: flex;
    flex-direction: column;
-   flex: 1;
+   flex: 5;
+   &.hidden {
+      display: none;
+   }
 }

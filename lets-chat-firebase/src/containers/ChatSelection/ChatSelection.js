@@ -3,8 +3,9 @@ import SelectChatBar from "../../components/SelectChatBar/SelectChatBar";
 
 import "./chat-selection.scss";
 
-const ChatSelection = () => {
+const ChatSelection = ({ isVisible }) => {
    const theme = "dark";
+   const hiddenClass = isVisible ? "" : "hidden";
    const tmp = [
       { name: "ASDf", message: "ASDF" },
       { name: "ASDf", message: "ASDF", active: true },
@@ -20,7 +21,7 @@ const ChatSelection = () => {
       { name: "ASDf", message: "ASDF" },
    ];
    return (
-      <div className="select-chat">
+      <div className={`select-chat ${hiddenClass}`}>
          <h4
             className={`select-chat__heading ${theme}-section-heading`}
          >{`//Chats`}</h4>

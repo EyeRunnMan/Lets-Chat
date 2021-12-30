@@ -10,6 +10,7 @@ import ChatSelection from "./containers/ChatSelection/ChatSelection";
 import ChatSettings from "./containers/ChatSettings/ChatSettings";
 import ChatWindow from "./containers/ChatWindow/ChatWindow";
 import AccountSettings from "./layouts/AccountSettings/AccountSettings";
+import ChatPageLayout from "./layouts/ChatPageLayout/ChatPageLayout";
 import Footer from "./layouts/Footer/Footer";
 import "./stylesheets/app.scss";
 
@@ -25,7 +26,7 @@ const App = () => {
          class="dark-app-bg"
       >
          <NavBar />
-         <AccountSettings />
+         <ChatPageLayout />
          <Footer />
       </div>
    );

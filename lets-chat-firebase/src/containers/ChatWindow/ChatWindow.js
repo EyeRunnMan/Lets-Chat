@@ -6,9 +6,11 @@ import ChatWindowHeader from "../../components/ChatWindowHeader/ChatWindowHeader
 import ChatingArea from "../../components/ChatingArea/ChatingArea";
 import MessageInputBar from "../../components/MessageInputBar/MessageInputBar";
 
-const ChatWindow = () => {
+const ChatWindow = ({ isVisible }) => {
+   const hiddenClass = isVisible ? "" : "hidden";
+
    return (
-      <div className="chat-window">
+      <div className={`chat-window ${hiddenClass}`}>
          <ChatWindowHeader />
          <ChatingArea />
          <MessageInputBar />

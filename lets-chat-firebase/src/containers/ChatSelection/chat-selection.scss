@@ -1,9 +1,14 @@
 .select-chat {
    display: flex;
-   flex: 1;
+   flex: 2;
    flex-direction: column;
-   overflow-y: scroll;
-   overflow-x: hidden;
+   overflow: hidden;
+   min-width: 35em;
+
+   &.hidden {
+      display: none;
+   }
+
    &__heading {
       font-size: 1.8em;
       margin: 0 0 0.5em 1em;

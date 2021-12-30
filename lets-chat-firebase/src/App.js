@@ -19,11 +19,11 @@ const App = () => {
          }}
          class="dark-app-bg"
       >
-         <NavBar />
-         {/* <ChatWindowHeader /> */}
-         {/* <ChatingArea /> */}
-         <ChatSelection />
-         {/* <MessageInputBar /> */}
+         {/* <NavBar /> */}
+         <ChatWindowHeader />
+         <ChatingArea />
+         {/* <ChatSelection /> */}
+         <MessageInputBar />
          <Footer />
       </div>
    );

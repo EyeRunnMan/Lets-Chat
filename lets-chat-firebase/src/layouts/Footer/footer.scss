@@ -4,6 +4,9 @@
       width: fit-content;
       font-size: 1.8rem;
       font-weight: bold;
-      margin: 0.5em auto;
+      margin: 1em auto;
+   }
+   &__link {
+      text-decoration: none;
    }
 }

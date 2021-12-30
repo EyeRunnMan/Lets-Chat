@@ -1,17 +1,27 @@
 import React from "react";
+import ChatingArea from "./components/ChatingArea/ChatingArea";
+import ChatWindowHeader from "./components/ChatWindowHeader/ChatWindowHeader";
 import MessageInputBar from "./components/MessageInputBar/MessageInputBar";
 
 import NavBar from "./components/Navbar/NavBar";
-import SelectChatBar from "./components/SelectChatBar/SelectChatBar";
+import ChatSelection from "./containers/ChatSelection/ChatSelection";
 import "./stylesheets/app.scss";
 
 const App = () => {
    return (
-      <div style={{ minHeight: "100vh" }} class="dark-app-bg">
+      <div
+         style={{
+            maxHeight: "100vh",
+            minHeight: "100vh",
+            display: "flex",
+            flexDirection: "column",
+         }}
+         class="dark-app-bg"
+      >
          <NavBar />
-         {/* <SelectChatBar name="asdasdff" message="123" variant />
-         <SelectChatBar name="asasdfasdfasd" message="123" />
-         <SelectChatBar name="asdfasdfasdf" message="123" active /> */}
+         {/* <ChatWindowHeader /> */}
+         {/* <ChatingArea /> */}
+         <ChatSelection />
          <MessageInputBar />
       </div>
    );

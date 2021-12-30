@@ -7,6 +7,7 @@ import MessageInputBar from "./components/MessageInputBar/MessageInputBar";
 import NavBar from "./components/Navbar/NavBar";
 import AccountInfo from "./containers/AccountInfo/AccountInfo";
 import ChatSelection from "./containers/ChatSelection/ChatSelection";
+import ChatSettings from "./containers/ChatSettings/ChatSettings";
 import Footer from "./layouts/Footer/Footer";
 import "./stylesheets/app.scss";
 
@@ -28,6 +29,7 @@ const App = () => {
          {/* <AddFriendInputBar />
          <MessageInputBar /> */}
          <AccountInfo />
+         <ChatSettings />
          <Footer />
       </div>
    );

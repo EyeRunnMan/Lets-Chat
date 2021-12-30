@@ -1,11 +1,14 @@
 .account-info {
+   padding: 1em 0;
    display: flex;
+   flex: 1;
    flex-direction: column;
-   gap: 3em;
    align-items: center;
+   justify-content: center;
+   gap: 3em;
    text-align: center;
    &__img {
-      width: 30%;
+      width: min(40%, 250px);
       aspect-ratio: 1/1;
    }
    &__name {

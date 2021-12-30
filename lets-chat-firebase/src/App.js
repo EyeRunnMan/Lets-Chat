@@ -5,6 +5,7 @@ import MessageInputBar from "./components/MessageInputBar/MessageInputBar";
 
 import NavBar from "./components/Navbar/NavBar";
 import ChatSelection from "./containers/ChatSelection/ChatSelection";
+import Footer from "./layouts/Footer/Footer";
 import "./stylesheets/app.scss";
 
 const App = () => {
@@ -22,7 +23,8 @@ const App = () => {
          {/* <ChatWindowHeader /> */}
          {/* <ChatingArea /> */}
          <ChatSelection />
-         <MessageInputBar />
+         {/* <MessageInputBar /> */}
+         <Footer />
       </div>
    );
 };

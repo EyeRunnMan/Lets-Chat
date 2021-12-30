@@ -1,6 +1,8 @@
 .chating-area {
    flex: 1;
    padding: 1em;
+   overflow-y: scroll;
+   overflow-x: hidden;
    &__msg {
       margin: 0 0 1em 0;
       font-size: 1.6rem;

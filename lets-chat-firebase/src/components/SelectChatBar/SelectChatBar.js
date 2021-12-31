@@ -10,7 +10,6 @@ const SelectChatBar = ({
 }) => {
    const variantType = `${variant ? "1" : "2"}`;
    const selectChatType = active ? "selected" : `${variantType}`;
-   console.log(active);
 
    return (
       <div className={`chat-bar ${theme}-select-chat-${selectChatType}`}>

@@ -8,3 +8,9 @@ html {
 body {
    font-family: Fira Code;
 }
+html,
+body,
+#root {
+   height: 100vh;
+   max-height: 100vh;
+}

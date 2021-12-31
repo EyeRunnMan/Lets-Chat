@@ -6,7 +6,9 @@
    align-items: center;
    justify-content: space-between;
    padding: 2em 3em;
-
+   &.hidden {
+      display: none;
+   }
    & a {
       text-decoration: none;
    }
@@ -32,6 +34,9 @@
       }
 
       &-alt {
+         &.hidden {
+            display: none;
+         }
          display: none;
          @include mixins.respond(tablet) {
             display: flex;

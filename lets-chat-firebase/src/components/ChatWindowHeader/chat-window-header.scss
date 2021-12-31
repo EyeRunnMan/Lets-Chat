@@ -3,6 +3,14 @@
    align-items: center;
    padding: 2em;
    gap: 2em;
+
+   justify-content: space-between;
+
+   &__name-container {
+      display: flex;
+      align-items: center;
+      gap: 1em;
+   }
    &__img {
       width: 5em;
       aspect-ratio: 1/1;
@@ -10,5 +18,37 @@
    &__title {
       font-size: 2.4rem;
       font-weight: bold;
+   }
+   &__lock-btn {
+      border: 0;
+      background: none;
+      opacity: 0.7;
+      &:hover {
+         opacity: 0.1;
+         cursor: pointer;
+      }
+   }
+   &__icon {
+      @mixin chat-window-header-mx {
+         display: block;
+         width: 4em;
+         aspect-ratio: 1/1;
+         background-color: white;
+      }
+
+      &-back {
+         @include chat-window-header-mx();
+         mask: url(../../assets/svgs/BackIcon.svg) no-repeat;
+         mask-size: 100%;
+         display: none;
+      }
+      &-locked {
+         @include chat-window-header-mx();
+         mask: url(../../assets/svgs/LockedIcon.svg) no-repeat;
+         mask-size: 100%;
+      }
+   }
+   &.mobile &__icon-back {
+      display: block;
    }
 }

@@ -1,22 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import "./chat-page-layout.scss";
 
 import ChatSelection from "../../containers/ChatSelection/ChatSelection";
 import ChatWindow from "../../containers/ChatWindow/ChatWindow";
 import AccountSettings from "../AccountSettings/AccountSettings";
+import { LayoutContext } from "../../context/LayoutContext/LayoutContext";
 
 function ChatPageLayout() {
-   const [
-      isVisibleChatSelection,
-      isVisibleChatWindow,
-      isVisibleAccountSettings,
-   ] = [false, false, true];
+   const {
+      isChatSelectionVisible,
+      isChatWindowVisible,
+      isAccountSettingsVisible,
+   } = useContext(LayoutContext);
    return (
       <div className="chat-page-layout">
-         <ChatSelection isVisible={isVisibleChatSelection} />
-         <ChatWindow isVisible={isVisibleChatWindow} />
-         <AccountSettings isVisible={isVisibleAccountSettings} />
+         <ChatSelection isVisible={isChatSelectionVisible} />
+         <ChatWindow isVisible={isChatWindowVisible} />
+         <AccountSettings isVisible={isAccountSettingsVisible} />
       </div>
    );
 }

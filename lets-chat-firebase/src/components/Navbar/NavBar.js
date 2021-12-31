@@ -13,10 +13,11 @@ const NavIcon = ({ active, link, theme, type }) => {
    );
 };
 
-const NavBar = ({ links, theme = "dark", page }) => {
+const NavBar = ({ links, theme = "dark", page, isVisible = true }) => {
+   const hiddenClass = isVisible ? "" : "hidden";
    return (
       <nav>
-         <div className="navbar">
+         <div className={`navbar ${hiddenClass}`}>
             <a href="/#">
                <h1 className={`navbar__heading dark-header-1`}>
                   <span className="dark-header-2">Lets</span>
@@ -36,7 +37,7 @@ const NavBar = ({ links, theme = "dark", page }) => {
                <div className={`navbar__icon-theme ${theme}-theme-icon`}></div>
             </a>
          </div>
-         <div className="navbar__nav-icons-alt">
+         <div className={`navbar__nav-icons-alt ${hiddenClass}`}>
             <NavIcon active={page === "about"} theme={theme} type="info" />
             <NavIcon active={page === "chat"} theme={theme} type="chat" />
             <NavIcon active={page === "account"} theme={theme} type="account" />

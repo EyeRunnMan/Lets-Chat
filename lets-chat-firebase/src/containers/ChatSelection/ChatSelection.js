@@ -3,6 +3,9 @@ import SelectChatBar from "../../components/SelectChatBar/SelectChatBar";
 
 import "./chat-selection.scss";
 
+import { CHAT_WINDOW_PATH } from "../../router/Routes.consts";
+
+import { useNavigate } from "react-router-dom";
 const ChatSelection = ({ isVisible }) => {
    const theme = "dark";
    const hiddenClass = isVisible ? "" : "hidden";
@@ -20,6 +23,7 @@ const ChatSelection = ({ isVisible }) => {
       { name: "ASDf", message: "ASDF" },
       { name: "ASDf", message: "ASDF" },
    ];
+   const navigate = useNavigate();
    return (
       <div className={`select-chat ${hiddenClass}`}>
          <h4
@@ -33,6 +37,7 @@ const ChatSelection = ({ isVisible }) => {
                   message={item.message}
                   active={item.active}
                   variant={idx % 2 === 0}
+                  OnClick={() => navigate(CHAT_WINDOW_PATH)}
                />
             ))}
          </div>

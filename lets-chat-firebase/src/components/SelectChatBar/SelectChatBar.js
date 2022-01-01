@@ -7,12 +7,16 @@ const SelectChatBar = ({
    message,
    theme = "dark",
    active = false,
+   OnClick,
 }) => {
    const variantType = `${variant ? "1" : "2"}`;
    const selectChatType = active ? "selected" : `${variantType}`;
 
    return (
-      <div className={`chat-bar ${theme}-select-chat-${selectChatType}`}>
+      <div
+         className={`chat-bar ${theme}-select-chat-${selectChatType}`}
+         onClick={OnClick}
+      >
          <img
             className="chat-bar__img"
             src={`https://avatars.dicebear.com/api/bottts/${name}.svg`}

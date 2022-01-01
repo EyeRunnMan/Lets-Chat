@@ -1,0 +1,9 @@
+.app-page {
+   max-height: 100vh;
+   min-height: 100vh;
+   display: flex;
+   flex-direction: column;
+   &.full {
+      max-height: fit-content;
+   }
+}

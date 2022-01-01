@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router";
 import "./chat-window-header.scss";
 
 export const MOBILE = "mobile";
@@ -8,11 +9,12 @@ const ChatWindowHeader = ({
    name = "asdfasd",
    theme = "dark",
    mode = DESKTOP,
+   OnBackClick,
 }) => {
    const mobileClass = mode === DESKTOP ? "" : "mobile";
    return (
       <div className={`chat-window-header ${mobileClass}`}>
-         <i className="chat-window-header__icon-back">asdf</i>
+         <i className="chat-window-header__icon-back" onClick={OnBackClick}></i>
          <span className="chat-window-header__name-container">
             <img
                className="chat-window-header__img"

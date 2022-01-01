@@ -4,33 +4,36 @@ import breakpoints from "../stylesheets/partials/_mixins.scss";
 
 import { LayoutContext } from "../context/LayoutContext/LayoutContext";
 import useWindowSize from "../hooks/useWindowSize";
-import ChatPage from "../pages/ChatPage/ChatPage";
 import {
    DESKTOP,
    MOBILE,
 } from "../components/ChatWindowHeader/ChatWindowHeader";
+import AppRouter from "../router/AppRouter";
+import { useLocation } from "react-router";
 
-export const SELECT_CHAT = "SelectChat";
-export const CHAT_WINDOW = "ChatWindow";
-export const ACCOUNT_SETTINGS = "AccountSettings";
+import {
+   CHATS_PATH,
+   CHAT_WINDOW_PATH,
+   SETTINGS_PATH,
+} from "../router/Routes.consts";
 
-function LayoutProvider({ mode = SELECT_CHAT }) {
+function LayoutProvider() {
    const [width] = useWindowSize();
    const bpWidth = parseInt(breakpoints.desktop);
    const isDesktop = width > bpWidth;
+   const { pathname } = useLocation();
    const defalutContext = {
-      isNavbarVisible: mode !== CHAT_WINDOW || isDesktop,
-      isChatSelectionVisible: mode === SELECT_CHAT || isDesktop,
-      isChatWindowVisible: mode === CHAT_WINDOW || isDesktop,
-      isAccountSettingsVisible: mode === ACCOUNT_SETTINGS || isDesktop,
+      isNavbarVisible: pathname !== CHAT_WINDOW_PATH || isDesktop,
+      isChatSelectionVisible: pathname === CHATS_PATH || isDesktop,
+      isChatWindowVisible: pathname === CHAT_WINDOW_PATH || isDesktop,
+      isAccountSettingsVisible: pathname === SETTINGS_PATH || isDesktop,
       deviceWidth: width,
       breakPointWidth: bpWidth,
       device: isDesktop ? DESKTOP : MOBILE,
    };
-   console.log(mode !== CHAT_WINDOW);
    return (
       <LayoutContext.Provider value={defalutContext}>
-         <ChatPage />
+         <AppRouter />
       </LayoutContext.Provider>
    );
 }

@@ -9,8 +9,8 @@ function AccountSettings({ isVisible }) {
    const hiddenClass = isVisible ? "" : "hidden";
    return (
       <div className={`account-settings ${hiddenClass}`}>
-         <AccountInfo />
-         <ChatSettings />
+         <AccountInfo onFriendAdd />
+         <ChatSettings onDownloadKeys onUploadKeys onDeleteAccount />
       </div>
    );
 }

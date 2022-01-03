@@ -1,5 +1,4 @@
 import React from "react";
-import { useNavigate } from "react-router";
 import "./chat-window-header.scss";
 
 export const MOBILE = "mobile";
@@ -10,6 +9,7 @@ const ChatWindowHeader = ({
    theme = "dark",
    mode = DESKTOP,
    OnBackClick,
+   toggleCrypt,
 }) => {
    const mobileClass = mode === DESKTOP ? "" : "mobile";
    return (
@@ -27,7 +27,7 @@ const ChatWindowHeader = ({
                0x{name}
             </span>
          </span>
-         <button className="chat-window-header__lock-btn">
+         <button className="chat-window-header__lock-btn" onClick={toggleCrypt}>
             <i className="chat-window-header__icon-locked"></i>
          </button>
       </div>

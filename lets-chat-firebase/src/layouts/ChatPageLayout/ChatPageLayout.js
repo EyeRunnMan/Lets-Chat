@@ -12,11 +12,12 @@ function ChatPageLayout() {
       isChatSelectionVisible,
       isChatWindowVisible,
       isAccountSettingsVisible,
+      device,
    } = useContext(LayoutContext);
    return (
       <div className="chat-page-layout">
          <ChatSelection isVisible={isChatSelectionVisible} />
-         <ChatWindow isVisible={isChatWindowVisible} />
+         <ChatWindow isVisible={isChatWindowVisible} deviceMode={device} />
          <AccountSettings isVisible={isAccountSettingsVisible} />
       </div>
    );

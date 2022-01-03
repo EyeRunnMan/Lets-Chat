@@ -6,7 +6,7 @@ import "./chat-selection.scss";
 import { CHAT_WINDOW_PATH } from "../../router/Routes.consts";
 
 import { useNavigate } from "react-router-dom";
-const ChatSelection = ({ isVisible }) => {
+const ChatSelection = ({ isVisible, OnBarClick = () => {} }) => {
    const theme = "dark";
    const hiddenClass = isVisible ? "" : "hidden";
    const tmp = [
@@ -37,6 +37,7 @@ const ChatSelection = ({ isVisible }) => {
                   message={item.message}
                   active={item.active}
                   variant={idx % 2 === 0}
+                  // TODO
                   OnClick={() => navigate(CHAT_WINDOW_PATH)}
                />
             ))}

@@ -1,7 +1,7 @@
 import React from "react";
 import "./message-input-bar.scss";
 
-const MessageInputBar = ({ theme = "dark" }) => {
+const MessageInputBar = ({ theme = "dark", onSend }) => {
    return (
       <div className={`input-bar ${theme}-chat-window-bg`}>
          <input className={`input-bar__field ${theme}-msg-input-field`} />

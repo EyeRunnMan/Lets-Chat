@@ -1,6 +1,10 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router";
-import { CHATS_PATH, SETTINGS_PATH } from "../../router/Routes.consts";
+import {
+   ABOUT_PATH,
+   CHATS_PATH,
+   SETTINGS_PATH,
+} from "../../router/Routes.consts";
 import "./navbar.scss";
 
 const NavIcon = ({ active, link, theme, type, OnClick = () => {} }) => {
@@ -43,7 +47,14 @@ const NavBar = ({ theme = "dark", isVisible = true }) => {
          <div
             className={`navbar__nav-icons-alt ${hiddenClass} ${"dark"}-app-bg`}
          >
-            <NavIcon theme={theme} type="info" />
+            <NavIcon
+               theme={theme}
+               type="info"
+               OnClick={() => {
+                  navigate(ABOUT_PATH);
+               }}
+               active={pathname === ABOUT_PATH}
+            />
             <NavIcon
                theme={theme}
                type="chat"

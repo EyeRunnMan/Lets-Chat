@@ -1,7 +1,12 @@
 import React from "react";
 import "./chat-settings.scss";
 
-const ChatSettings = ({ theme = "dark" }) => {
+const ChatSettings = ({
+   theme = "dark",
+   onDownloadKeys,
+   onUploadKeys,
+   onDeleteAccount,
+}) => {
    return (
       <div className="chat-settings-wrapper">
          <h4

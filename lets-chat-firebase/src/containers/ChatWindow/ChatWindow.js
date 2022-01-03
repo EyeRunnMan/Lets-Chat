@@ -1,26 +1,35 @@
-import React, { useContext } from "react";
+import React from "react";
 
 import "./chat-window.scss";
 
-import ChatWindowHeader from "../../components/ChatWindowHeader/ChatWindowHeader";
+import ChatWindowHeader, {
+   MOBILE,
+} from "../../components/ChatWindowHeader/ChatWindowHeader";
 import ChatingArea from "../../components/ChatingArea/ChatingArea";
 import MessageInputBar from "../../components/MessageInputBar/MessageInputBar";
-import { LayoutContext } from "../../context/LayoutContext/LayoutContext";
 import { useNavigate } from "react-router";
 import { CHATS_PATH } from "../../router/Routes.consts";
 
-const ChatWindow = ({ isVisible }) => {
+const ChatWindow = ({
+   isVisible,
+   deviceMode = MOBILE,
+   messages = [],
+   OnMessageSend,
+   toggleCrypt,
+}) => {
    const hiddenClass = isVisible ? "" : "hidden";
-   const { device } = useContext(LayoutContext);
    const navigate = useNavigate();
    return (
       <div className={`chat-window ${hiddenClass}`}>
          <ChatWindowHeader
-            mode={device}
+            mode={deviceMode}
+            // TODO
             OnBackClick={() => navigate(CHATS_PATH)}
+            // TODO
+            toggleCrypt={() => toggleCrypt}
          />
-         <ChatingArea />
-         <MessageInputBar />
+         <ChatingArea messages={messages} />
+         <MessageInputBar onSend={OnMessageSend} />
       </div>
    );
 };

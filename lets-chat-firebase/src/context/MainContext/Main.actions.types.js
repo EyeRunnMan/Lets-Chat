@@ -1,0 +1,2 @@
+export const UPDATE_SIGN_IN_DETAILS = "UPDATE_SIGN_IN_DETAILS";
+export const LOG_OUT = "LOG_OUT";

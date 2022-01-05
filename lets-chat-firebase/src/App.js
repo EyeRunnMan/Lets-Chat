@@ -1,14 +1,14 @@
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
 
-import LayoutProvider from "./contextProvider/LayoutProvider";
+import MainProvider from "./contextProvider/MainProvider";
 
 import "./stylesheets/app.scss";
 
 const App = () => {
    return (
       <BrowserRouter>
-         <LayoutProvider />
+         <MainProvider />
       </BrowserRouter>
    );
 };

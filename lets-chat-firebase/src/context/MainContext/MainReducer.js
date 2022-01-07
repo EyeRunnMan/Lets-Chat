@@ -1,10 +1,14 @@
 import { auth } from "../../third-party/firebase/FirebaseApp";
+import AddFriendFirebase from "../../third-party/firebase/functions/AddFriendFirebase";
 import SignupFirebase from "../../third-party/firebase/functions/SignupFirebase";
 import VerifyUserInDb from "../../third-party/firebase/functions/VerifyUserInDb";
-import { SIGN_IN, SIGN_IN_THE_USER } from "./Main.actions.types";
+import { ADD_FRIEND, SIGN_IN, SIGN_IN_THE_USER } from "./Main.actions.types";
 
 export const initialState = {
-   user_name: auth.currentUser ? auth.currentUser.displayName : "loading...",
+   current_user_name: auth.currentUser
+      ? auth.currentUser.displayName
+      : "loading...",
+   isAuthed: false,
 };
 
 export const MainReducer = (state, action = {}) => {
@@ -12,7 +16,7 @@ export const MainReducer = (state, action = {}) => {
    switch (type) {
       case SIGN_IN: {
          SignupFirebase();
-         return;
+         return state;
       }
       case SIGN_IN_THE_USER: {
          VerifyUserInDb({ user_name: payload?.displayName, uid: payload?.uid });
@@ -20,7 +24,12 @@ export const MainReducer = (state, action = {}) => {
             ...state,
             current_user_name: payload?.displayName,
             current_uid: payload?.uid,
+            isAuthed: true,
          };
+      }
+      case ADD_FRIEND: {
+         AddFriendFirebase(payload, state.current_uid);
+         return state;
       }
 
       default:

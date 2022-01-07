@@ -1,13 +1,18 @@
-import { doc, setDoc } from "firebase/firestore";
+import { doc, setDoc, arrayUnion } from "firebase/firestore";
 import { db } from "../FirebaseApp";
 
 const VerifyUserInDb = async ({ user_name, uid }) => {
    try {
       console.log("called");
-      await setDoc(doc(db, "users", uid), {
-         user_name,
-         uid,
-      });
+      await setDoc(
+         doc(db, "users", uid),
+         {
+            user_name,
+            uid,
+            friends: arrayUnion(uid),
+         },
+         { merge: true }
+      );
    } catch (e) {
       console.error("Error adding document: ", e);
    }

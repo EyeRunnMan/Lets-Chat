@@ -1,13 +1,16 @@
-import { signInWithPopup } from "@firebase/auth";
+import {
+   browserLocalPersistence,
+   setPersistence,
+   signInWithPopup,
+} from "@firebase/auth";
 import { auth, provider } from "../FirebaseApp";
 
-const SignupFirebase = async (cb, type) => {
-   await signInWithPopup(auth, provider);
-   if (auth.currentUser) {
-      cb({
-         type,
-         payload: auth.currentUser,
-      });
+const SignupFirebase = async () => {
+   try {
+      await setPersistence(auth, browserLocalPersistence);
+      await signInWithPopup(auth, provider);
+   } catch (e) {
+      console.log(e);
    }
 };
 

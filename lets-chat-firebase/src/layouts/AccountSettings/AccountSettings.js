@@ -9,11 +9,10 @@ import { MainContext } from "../../context/MainContext/MainContext";
 function AccountSettings({ isVisible }) {
    const hiddenClass = isVisible ? "" : "hidden";
    const { mainState } = useContext(MainContext);
-   const { user_name } = mainState;
-   console.log(mainState);
+   const { current_user_name } = mainState;
    return (
       <div className={`account-settings ${hiddenClass}`}>
-         <AccountInfo onFriendAdd name={"0x" + user_name} />
+         <AccountInfo onFriendAdd name={current_user_name} />
          <ChatSettings onDownloadKeys onUploadKeys onDeleteAccount />
       </div>
    );

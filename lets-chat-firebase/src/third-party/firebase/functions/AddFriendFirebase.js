@@ -8,11 +8,19 @@ const AddFriendFirebase = async (name = "", current_uid) => {
       const { uid } = user_doc;
 
       const current_user_docref = doc(db, "users", current_uid);
-
       await updateDoc(
          current_user_docref,
          {
             friends: arrayUnion(uid),
+         },
+         { merge: true }
+      );
+      const other_user_docref = doc(db, "users", uid);
+
+      await updateDoc(
+         other_user_docref,
+         {
+            friends: arrayUnion(current_uid),
          },
          { merge: true }
       );

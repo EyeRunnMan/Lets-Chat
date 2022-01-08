@@ -6,23 +6,13 @@ import "./chat-selection.scss";
 import { CHAT_WINDOW_PATH } from "../../router/Routes.consts";
 
 import { useNavigate } from "react-router-dom";
-const ChatSelection = ({ isVisible, OnBarClick = () => {} }) => {
+const ChatSelection = ({
+   isVisible,
+   OnBarClick = () => {},
+   friendList = [],
+}) => {
    const theme = "dark";
    const hiddenClass = isVisible ? "" : "hidden";
-   const tmp = [
-      { name: "ASDf", message: "ASDF" },
-      { name: "ASDf", message: "ASDF", active: true },
-      { name: "ASDf", message: "ASDF" },
-      { name: "ASDf", message: "ASDF" },
-      { name: "ASDf", message: "ASDF" },
-      { name: "ASDf", message: "ASDF" },
-      { name: "ASDf", message: "ASDF" },
-      { name: "ASDf", message: "ASDF" },
-      { name: "ASDf", message: "ASDF" },
-      { name: "ASDf", message: "ASDF" },
-      { name: "ASDf", message: "ASDF" },
-      { name: "ASDf", message: "ASDF" },
-   ];
    const navigate = useNavigate();
    return (
       <div className={`select-chat ${hiddenClass}`}>
@@ -30,12 +20,10 @@ const ChatSelection = ({ isVisible, OnBarClick = () => {} }) => {
             className={`select-chat__heading ${theme}-section-heading`}
          >{`//Chats`}</h4>
          <div className="select-chat__chats">
-            {tmp.map((item, idx) => (
+            {friendList.map((item, idx) => (
                <SelectChatBar
-                  key={idx}
-                  name={Math.random()}
-                  message={item.message}
-                  active={item.active}
+                  key={item.uid}
+                  name={item.user_name}
                   variant={idx % 2 === 0}
                   // TODO
                   OnClick={() => navigate(CHAT_WINDOW_PATH)}

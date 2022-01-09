@@ -37,7 +37,7 @@ function ChatPageLayout() {
             }}
          />
          <ChatWindow
-            isVisible={isChatWindowVisible}
+            isVisible={isChatWindowVisible && current_chat_name}
             deviceMode={device}
             chatUser={current_chat_name}
             OnBackClick={() => {

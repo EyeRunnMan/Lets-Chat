@@ -24,7 +24,7 @@ const ChatWindowHeader = ({
             <span
                className={`chat-window-header__title ${theme}-section-heading`}
             >
-               0x{name}
+               {name}
             </span>
          </span>
          <button className="chat-window-header__lock-btn" onClick={toggleCrypt}>

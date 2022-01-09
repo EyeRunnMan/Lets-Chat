@@ -13,6 +13,8 @@ import { CHATS_PATH } from "../../router/Routes.consts";
 const ChatWindow = ({
    isVisible,
    deviceMode = MOBILE,
+   OnBackClick,
+   chatUser = "",
    messages = [],
    OnMessageSend,
    toggleCrypt,
@@ -22,9 +24,13 @@ const ChatWindow = ({
    return (
       <div className={`chat-window ${hiddenClass}`}>
          <ChatWindowHeader
+            name={chatUser}
             mode={deviceMode}
             // TODO
-            OnBackClick={() => navigate(CHATS_PATH)}
+            OnBackClick={() => {
+               navigate(CHATS_PATH);
+               OnBackClick();
+            }}
             // TODO
             toggleCrypt={() => toggleCrypt}
          />

@@ -4,8 +4,10 @@ import SignupFirebase from "../../third-party/firebase/functions/SignupFirebase"
 import VerifyUserInDb from "../../third-party/firebase/functions/VerifyUserInDb";
 import {
    ADD_FRIEND,
+   SET_CHAT_WINDOW,
    SIGN_IN,
    SIGN_IN_THE_USER,
+   UNSET_CHAT_WINDOW,
    UPDATE_DETAILS,
 } from "./Main.actions.types";
 
@@ -47,10 +49,24 @@ export const MainReducer = (state, action = {}) => {
                current_user_name: payload.user_name,
             };
          else {
-            return { isAuthed: false };
+            return { isAuthed: false, theme: state.theme };
          }
       }
-
+      case SET_CHAT_WINDOW: {
+         return {
+            ...state,
+            current_chat_name: payload?.name,
+            current_chat_id: payload?.id,
+         };
+      }
+      case UNSET_CHAT_WINDOW: {
+         return {
+            ...state,
+            current_chat_name: "",
+            current_chat_id: "",
+            current_chat_messages: [],
+         };
+      }
       default:
          throw new Error();
    }

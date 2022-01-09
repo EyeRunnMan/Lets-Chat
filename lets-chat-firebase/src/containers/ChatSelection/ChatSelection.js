@@ -10,6 +10,7 @@ const ChatSelection = ({
    isVisible,
    OnBarClick = () => {},
    friendList = [],
+   activeChatId,
 }) => {
    const theme = "dark";
    const hiddenClass = isVisible ? "" : "hidden";
@@ -26,7 +27,11 @@ const ChatSelection = ({
                   name={item.user_name}
                   variant={idx % 2 === 0}
                   // TODO
-                  OnClick={() => navigate(CHAT_WINDOW_PATH)}
+                  active={item.uid === activeChatId}
+                  OnClick={() => {
+                     navigate(CHAT_WINDOW_PATH);
+                     OnBarClick(item.user_name, item.uid);
+                  }}
                />
             ))}
          </div>

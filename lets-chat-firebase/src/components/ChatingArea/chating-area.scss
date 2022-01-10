@@ -3,6 +3,8 @@
    padding: 1em;
    overflow-y: scroll;
    overflow-x: hidden;
+   display: flex;
+   flex-direction: column-reverse;
    &__msg {
       margin: 0 0 1em 0;
       font-size: 1.6rem;

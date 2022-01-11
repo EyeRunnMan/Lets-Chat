@@ -34,7 +34,7 @@ const ChatWindow = ({
             // TODO
             toggleCrypt={() => toggleCrypt}
          />
-         <ChatingArea />
+         <ChatingArea messages={messages} />
          <MessageInputBar onSend={OnMessageSend} />
       </div>
    );

@@ -8,6 +8,7 @@ import AccountSettings from "../AccountSettings/AccountSettings";
 import { LayoutContext } from "../../context/LayoutContext/LayoutContext";
 import { MainContext } from "../../context/MainContext/MainContext";
 import {
+   SEND_MESSAGES,
    SET_CHAT_WINDOW,
    UNSET_CHAT_WINDOW,
 } from "../../context/MainContext/Main.actions.types";
@@ -20,9 +21,13 @@ function ChatPageLayout() {
       device,
    } = useContext(LayoutContext);
    const { mainState, mainDispatch } = useContext(MainContext);
-   const { friends, current_uid, current_chat_name, current_chat_id } =
-      mainState;
-   console.log(mainState);
+   const {
+      friends,
+      current_uid,
+      current_chat_name,
+      current_chat_id,
+      current_chat_messages,
+   } = mainState;
    return (
       <div className="chat-page-layout">
          <ChatSelection
@@ -42,6 +47,10 @@ function ChatPageLayout() {
             chatUser={current_chat_name}
             OnBackClick={() => {
                mainDispatch({ type: UNSET_CHAT_WINDOW });
+            }}
+            messages={current_chat_messages}
+            OnMessageSend={(value) => {
+               mainDispatch({ type: SEND_MESSAGES, payload: value });
             }}
          />
          <AccountSettings isVisible={isAccountSettingsVisible} />

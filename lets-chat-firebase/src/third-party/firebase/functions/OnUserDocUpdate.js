@@ -13,7 +13,6 @@ const OnUserDocUpdate = (current_uid, fn) => {
             };
          })
       );
-      console.log(updatedFriendsList);
       const updatedData = { ...udpatedDoc.data(), friends: updatedFriendsList };
       fn(updatedData);
    });

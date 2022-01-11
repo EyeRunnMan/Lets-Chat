@@ -4,7 +4,9 @@ const AddFriendInputBar = ({ onAddFriend = () => {} }) => {
    const inputField = useRef(null);
 
    const handleBtnClk = () => {
+      console.log("asadfaasdf");
       onAddFriend(inputField.current.value);
+      inputField.current.value = "";
    };
 
    return (

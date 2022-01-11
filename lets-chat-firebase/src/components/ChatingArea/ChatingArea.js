@@ -4,22 +4,17 @@ function ChatingArea({
    theme = "dark",
    messages = [{ sender: "ASDF", text: "ASDFASDf" }, { text: "ASDFASDf" }],
 }) {
-   const mappedMessages = messages
-      .map((item, id) => {
-         const spanClass = `${theme}-chat-area-${
-            item.sender ? "other" : "user"
-         }`;
-         const msgSender = item.sender ? item.sender : "you";
-         const currentMsg = (
-            <p className="chating-area__msg" key={id}>
-               <span className={spanClass}>{`${msgSender} => `}</span>
-               {item.text}
-            </p>
-         );
-         return currentMsg;
-      })
-      .reverse();
-   console.log(mappedMessages + " " + messages);
+   const mappedMessages = messages.map((item, id) => {
+      const spanClass = `${theme}-chat-area-${item.sender ? "other" : "user"}`;
+      const msgSender = item.sender ? item.sender : "you";
+      const currentMsg = (
+         <p className="chating-area__msg" key={id}>
+            <span className={spanClass}>{`${msgSender} => `}</span>
+            {item.text}
+         </p>
+      );
+      return currentMsg;
+   });
    return (
       <div className={`chating-area ${theme}-chat-window-bg`}>
          {/* <p className="chating-area__msg">

@@ -1,19 +1,9 @@
-import {
-   addDoc,
-   arrayUnion,
-   collection,
-   doc,
-   getDoc,
-   serverTimestamp,
-   setDoc,
-   updateDoc,
-} from "@firebase/firestore";
-import { getCurrentTimeUTC } from "./helper/getCurrentTimeUTC";
+import { doc, serverTimestamp, setDoc } from "@firebase/firestore";
 import { db } from "../FirebaseApp";
-const SendMessageToUser = (msg, user_id, other_id) => {
+const SendMessageToUser = (msg, user_id, other_id, msg_id = "nowhere") => {
    console.log("twice");
 
-   addDoc(collection(db, "messages", user_id + "to" + other_id, "messages"), {
+   setDoc(doc(db, "messages", user_id + "to" + other_id, "messages", msg_id), {
       timestamp: serverTimestamp(),
       text: msg,
    });

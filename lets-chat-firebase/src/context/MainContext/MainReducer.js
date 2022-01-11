@@ -1,3 +1,4 @@
+import { v4 } from "uuid";
 import { auth } from "../../third-party/firebase/FirebaseApp";
 import AddFriendFirebase from "../../third-party/firebase/functions/AddFriendFirebase";
 import { getCurrentTimeUTC } from "../../third-party/firebase/functions/helper/getCurrentTimeUTC";
@@ -85,8 +86,6 @@ export const MainReducer = (state, action = {}) => {
          return { ...state, current_chat_messages: mappedMessages };
       }
       case MESSAGES_UPDATED_OTHER: {
-         // console.log(payload);
-
          const newMessages = payload.map((item) => {
             return { ...item, isOther: true };
          });
@@ -117,9 +116,15 @@ export const MainReducer = (state, action = {}) => {
             text: payload,
             timestamp: getCurrentTimeUTC(),
          };
-
+         const msg_id = v4();
+         console.log(msg_id);
          const updatedMessages = [newMsg, ...state.current_chat_messages];
-         SendMessageToUser(payload, state.current_uid, state.current_chat_id);
+         SendMessageToUser(
+            payload,
+            state.current_uid,
+            state.current_chat_id,
+            msg_id
+         );
          return { ...state, current_chat_messages: updatedMessages };
       }
       default:

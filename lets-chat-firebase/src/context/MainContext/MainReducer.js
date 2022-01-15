@@ -15,6 +15,7 @@ import {
    UNSET_CHAT_WINDOW,
    UPDATE_DETAILS,
    SEND_MESSAGES,
+   TOGGLE_ENCRYPTION,
 } from "./Main.actions.types";
 
 export const initialState = {
@@ -25,6 +26,7 @@ export const initialState = {
    current_chat_messages: [],
    current_chat_id: "",
    isAuthed: false,
+   isEncrypted: true,
 };
 
 export const MainReducer = (state, action = {}) => {
@@ -126,6 +128,9 @@ export const MainReducer = (state, action = {}) => {
             msg_id
          );
          return { ...state, current_chat_messages: updatedMessages };
+      }
+      case TOGGLE_ENCRYPTION: {
+         return { ...state, isEncrypted: !state.isEncrypted };
       }
       default:
          throw new Error();

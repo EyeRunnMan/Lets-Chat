@@ -47,6 +47,11 @@
          mask: url(../../assets/svgs/LockedIcon.svg) no-repeat;
          mask-size: 100%;
       }
+      &-unlocked {
+         @include chat-window-header-mx();
+         mask: url(../../assets/svgs/UnlockButton.svg) no-repeat;
+         mask-size: 100%;
+      }
    }
    &.mobile &__icon-back {
       display: block;

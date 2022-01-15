@@ -18,6 +18,7 @@ const ChatWindow = ({
    messages = [],
    OnMessageSend,
    toggleCrypt,
+   encryptedState = false,
 }) => {
    const hiddenClass = isVisible ? "" : "hidden";
    const navigate = useNavigate();
@@ -32,7 +33,8 @@ const ChatWindow = ({
                OnBackClick();
             }}
             // TODO
-            toggleCrypt={() => toggleCrypt}
+            encrypted={encryptedState}
+            toggleCrypt={toggleCrypt}
          />
          <ChatingArea messages={messages} />
          <MessageInputBar onSend={OnMessageSend} />

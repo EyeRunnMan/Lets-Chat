@@ -1,20 +1,19 @@
-import {
-   addDoc,
-   collection,
-   doc,
-   serverTimestamp,
-   setDoc,
-} from "@firebase/firestore";
+import { doc, serverTimestamp, setDoc } from "@firebase/firestore";
+import GenerateKeyPairs from "../../../../cryptographyfunctions/GenerateKeyPairs";
 import { db } from "../../FirebaseApp";
 
 const createMessageDoc = async (user_id, other_id) => {
    try {
+      const userPublicKey = "";
+      GenerateKeyPairs();
       console.log(other_id);
       await setDoc(
          doc(db, "messages", user_id + "to" + other_id),
          {
             user_id,
             other_id,
+            user_public_key: userPublicKey,
+            other_public_key: "",
          },
          { merge: true }
       );
@@ -32,6 +31,8 @@ const createMessageDoc = async (user_id, other_id) => {
          {
             user_id: other_id,
             other_id: user_id,
+            user_public_key: userPublicKey,
+            other_public_key: "",
          },
          { merge: true }
       );

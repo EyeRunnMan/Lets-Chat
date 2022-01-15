@@ -10,6 +10,7 @@ import { MainContext } from "../../context/MainContext/MainContext";
 import {
    SEND_MESSAGES,
    SET_CHAT_WINDOW,
+   TOGGLE_ENCRYPTION,
    UNSET_CHAT_WINDOW,
 } from "../../context/MainContext/Main.actions.types";
 
@@ -27,6 +28,7 @@ function ChatPageLayout() {
       current_chat_name,
       current_chat_id,
       current_chat_messages,
+      isEncrypted,
    } = mainState;
    return (
       <div className="chat-page-layout">
@@ -52,6 +54,8 @@ function ChatPageLayout() {
             OnMessageSend={(value) => {
                mainDispatch({ type: SEND_MESSAGES, payload: value });
             }}
+            encryptedState={isEncrypted}
+            toggleCrypt={() => mainDispatch({ type: TOGGLE_ENCRYPTION })}
          />
          <AccountSettings isVisible={isAccountSettingsVisible} />
       </div>

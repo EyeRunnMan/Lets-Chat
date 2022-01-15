@@ -7,6 +7,7 @@ import {
 } from "../context/MainContext/Main.actions.types";
 import { MainContext } from "../context/MainContext/MainContext";
 import { initialState, MainReducer } from "../context/MainContext/MainReducer";
+import CryptoTest from "../cryptographyfunctions/helper/crypto.test";
 import { auth } from "../third-party/firebase/FirebaseApp";
 import OnMessgeUpdate from "../third-party/firebase/functions/OnMessageUpdate";
 import OnUserDocUpdate from "../third-party/firebase/functions/OnUserDocUpdate";
@@ -17,6 +18,7 @@ function MainProvider() {
    const other_id = mainState.current_chat_id;
 
    useEffect(() => {
+      CryptoTest();
       auth.onAuthStateChanged((user) => {
          if (user) {
             mainDispatch({ type: SIGN_IN_THE_USER, payload: user });

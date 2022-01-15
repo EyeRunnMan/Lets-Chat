@@ -10,6 +10,7 @@ const ChatWindowHeader = ({
    mode = DESKTOP,
    OnBackClick,
    toggleCrypt,
+   encrypted = false,
 }) => {
    const mobileClass = mode === DESKTOP ? "" : "mobile";
    return (
@@ -28,7 +29,11 @@ const ChatWindowHeader = ({
             </span>
          </span>
          <button className="chat-window-header__lock-btn" onClick={toggleCrypt}>
-            <i className="chat-window-header__icon-locked"></i>
+            <i
+               className={`chat-window-header__icon-${
+                  encrypted ? "locked" : "unlocked"
+               }`}
+            ></i>
          </button>
       </div>
    );

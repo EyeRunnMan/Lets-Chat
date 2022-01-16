@@ -19,9 +19,13 @@ const GenerateKeyPairs = async (other_uid = "Asdf") => {
       "jwk",
       keyPair.privateKey
    );
-   SetKeyPairForChat({ other_uid: other_uid, user_privateKey: privateKeyJwk });
+   SetKeyPairForChat({
+      other_uid: other_uid,
+      user_private_key: privateKeyJwk,
+      user_public_key: publicKeyJwk,
+   });
 
-   return { publicKeyJwk, privateKeyJwk };
+   return { publicKey: publicKeyJwk, privateKey: privateKeyJwk };
 };
 
 export default GenerateKeyPairs;

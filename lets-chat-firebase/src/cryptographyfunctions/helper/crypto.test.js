@@ -6,17 +6,14 @@ import str2ab from "./StringToArrayBuffer";
 
 const CryptoTest = async (msg = "hi my name is karan") => {
    const keyPair = await GenerateKeyPairs();
-   const publickKey = keyPair.publicKeyJwk;
-   const privateKey = keyPair.privateKeyJwk;
+   const publickKey = keyPair.publicKey;
+   const privateKey = keyPair.privateKey;
    console.log(keyPair);
    const encrypted = await EncryptWithPublicKey(msg, publickKey);
 
    console.log(ab2str(encrypted));
-
-   const decrypted = await DecryptWithPrivateKey(
-      str2ab(ab2str(encrypted)),
-      privateKey
-   );
+   console.log(encrypted);
+   const decrypted = await DecryptWithPrivateKey(encrypted, privateKey);
 
    console.log(decrypted);
    console.log("done");

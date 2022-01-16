@@ -4,15 +4,14 @@ import { db } from "../../FirebaseApp";
 
 const createMessageDoc = async (user_id, other_id) => {
    try {
-      const userPublicKey = "";
-      GenerateKeyPairs();
+      const { publicKey } = await GenerateKeyPairs(other_id);
       console.log(other_id);
       await setDoc(
          doc(db, "messages", user_id + "to" + other_id),
          {
             user_id,
             other_id,
-            user_public_key: userPublicKey,
+            user_public_key: JSON.stringify(publicKey),
             other_public_key: "",
          },
          { merge: true }
@@ -31,8 +30,8 @@ const createMessageDoc = async (user_id, other_id) => {
          {
             user_id: other_id,
             other_id: user_id,
-            user_public_key: userPublicKey,
-            other_public_key: "",
+            user_public_key: "",
+            other_public_key: JSON.stringify(publicKey),
          },
          { merge: true }
       );

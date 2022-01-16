@@ -1,3 +1,4 @@
+import ab2str from "./helper/ArraybufferToString";
 import settings from "./helper/crypto.settings";
 
 const EncryptWithPublicKey = async (msg, publicKeyjwk) => {
@@ -6,9 +7,10 @@ const EncryptWithPublicKey = async (msg, publicKeyjwk) => {
       return enc.encode(msg);
    }
    function importPublickKey(jwk) {
+      console.log(jwk);
       return window.crypto.subtle.importKey(
          "jwk",
-         publicKeyjwk,
+         jwk,
          {
             ...settings,
          },
@@ -26,7 +28,7 @@ const EncryptWithPublicKey = async (msg, publicKeyjwk) => {
       publicKey,
       encoded
    );
-   return ciphertext;
+   return ab2str(ciphertext);
 };
 
 export default EncryptWithPublicKey;

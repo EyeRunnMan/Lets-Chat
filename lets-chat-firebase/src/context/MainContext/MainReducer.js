@@ -75,7 +75,7 @@ export const MainReducer = (state, action = {}) => {
          };
       }
       case MESSAGES_UPDATED_USER: {
-         const mappedMessages = payload.map((item) => {
+         const mappedMessagesDecrypted = payload.decrypted.map((item) => {
             if (!item) {
                return "";
             }
@@ -85,12 +85,34 @@ export const MainReducer = (state, action = {}) => {
                timestamp: item.timestamp,
             };
          });
-         return { ...state, current_chat_messages: mappedMessages };
+         const mappedMessagesEncrypted = payload.encrypted.map((item) => {
+            if (!item) {
+               return "";
+            }
+            return {
+               sender: false,
+               text: item.text,
+               timestamp: item.timestamp,
+            };
+         });
+         if (state.isEncrypted) {
+            return { ...state, current_chat_messages: mappedMessagesEncrypted };
+         }
+         return {
+            ...state,
+            current_chat_messages: mappedMessagesDecrypted,
+         };
       }
       case MESSAGES_UPDATED_OTHER: {
-         const newMessages = payload.map((item) => {
+         const encryptedOther = payload.encrypted.map((item) => {
             return { ...item, isOther: true };
          });
+         const decryptedOther = payload.decrypted.map((item) => {
+            return { ...item, isOther: true };
+         });
+         const newMessages = state.isEncrypted
+            ? encryptedOther
+            : decryptedOther;
 
          const updatedMessaages = [
             ...newMessages,

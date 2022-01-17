@@ -6,6 +6,7 @@ import AccountInfo from "../../containers/AccountInfo/AccountInfo";
 import ChatSettings from "../../containers/ChatSettings/ChatSettings";
 import { MainContext } from "../../context/MainContext/MainContext";
 import { ADD_FRIEND } from "../../context/MainContext/Main.actions.types";
+import DownloadLocalStorage from "../../functions/DownloadLocalStorage";
 
 function AccountSettings({ isVisible }) {
    const hiddenClass = isVisible ? "" : "hidden";
@@ -19,7 +20,11 @@ function AccountSettings({ isVisible }) {
             }}
             name={current_user_name}
          />
-         <ChatSettings onDownloadKeys onUploadKeys onDeleteAccount />
+         <ChatSettings
+            onDownloadKeys={DownloadLocalStorage}
+            onUploadKeys
+            onDeleteAccount
+         />
       </div>
    );
 }

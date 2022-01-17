@@ -16,7 +16,7 @@ import LayoutProvider from "./LayoutProvider";
 function MainProvider() {
    const [mainState, mainDispatch] = useReducer(MainReducer, initialState);
    const other_id = mainState.current_chat_id;
-
+   const isEncrypted = mainState.isEncrypted;
    useEffect(() => {
       CryptoTest();
       auth.onAuthStateChanged((user) => {
@@ -44,7 +44,7 @@ function MainProvider() {
             // mainDispatch({ type: SIGN_OUT_THE_USER });
          }
       });
-   }, [other_id]);
+   }, [other_id, isEncrypted]);
    return (
       <MainContext.Provider value={{ mainState, mainDispatch }}>
          <LayoutProvider />

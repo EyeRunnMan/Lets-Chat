@@ -25,7 +25,7 @@
       padding: 0.4em 1em;
       font-size: 1.8rem;
       font-weight: bold;
-      width: 15em;
+      min-width: 15em;
       cursor: pointer;
       &:last-of-type {
          width: 12em;
@@ -34,6 +34,7 @@
          opacity: 0.5;
       }
    }
+
    &__icon {
       &-save {
          width: 1em;

@@ -16,10 +16,10 @@ const DecryptWithPrivateKey = async (ciphertext, privateKeyjwk) => {
    console.log(ciphertext);
    const cipherBuffer = str2ab(ciphertext);
    console.log(new DataView(cipherBuffer));
-   const privateKey = await importPrivateKey(privateKeyjwk);
-   console.log(privateKey);
-
    try {
+      const privateKey = await importPrivateKey(privateKeyjwk);
+      console.log(privateKey);
+
       const decrypted = await window.crypto.subtle.decrypt(
          {
             ...settings,
@@ -30,10 +30,10 @@ const DecryptWithPrivateKey = async (ciphertext, privateKeyjwk) => {
       const dec = new TextDecoder();
       return dec.decode(decrypted);
    } catch (error) {
-      console.log(error);
+      // console.log(error);
    }
 
-   return "ASDFasdf";
+   return "Private Keys not found check logs";
 };
 
 export default DecryptWithPrivateKey;

@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Lets-Chat/static/css/main.d3643e9b.css",
-    "main.js": "/Lets-Chat/static/js/main.4df9d831.js",
+    "main.css": "/Lets-Chat/static/css/main.97e0439d.css",
+    "main.js": "/Lets-Chat/static/js/main.9eedf43a.js",
     "static/media/FiraCode-VF.woff": "/Lets-Chat/static/media/FiraCode-VF.d7af67f866f9a5e0a113.woff",
     "static/media/FiraCode-Bold.woff": "/Lets-Chat/static/media/FiraCode-Bold.e3428b597c378e1fdcb0.woff",
     "static/media/FiraCode-SemiBold.woff": "/Lets-Chat/static/media/FiraCode-SemiBold.4558fb863ac61e930234.woff",
@@ -14,6 +14,11 @@
     "static/media/FiraCode-Regular.woff2": "/Lets-Chat/static/media/FiraCode-Regular.bf5ea52fa0094c7f7621.woff2",
     "static/media/FiraCode-Light.woff2": "/Lets-Chat/static/media/FiraCode-Light.89b207dfa6dd890c3f41.woff2",
     "static/media/FiraCode-Medium.woff2": "/Lets-Chat/static/media/FiraCode-Medium.1bc138a84f63b384c3f2.woff2",
+    "static/media/ReactLogo.svg": "/Lets-Chat/static/media/ReactLogo.ae62622598f39552abdcdb023e554c6f.svg",
+    "static/media/SassLogo.svg": "/Lets-Chat/static/media/SassLogo.8351205a93eafac2e392b26acf7580e1.svg",
+    "static/media/FirebaseLogo.svg": "/Lets-Chat/static/media/FirebaseLogo.ea1a2d6693eea8cbaf11cbef1bdf4a8e.svg",
+    "static/media/WebCryptoApiLogo.svg": "/Lets-Chat/static/media/WebCryptoApiLogo.1eb78716ce960a3d449739a3b3d5eeb0.svg",
+    "static/media/DicebearLogo.svg": "/Lets-Chat/static/media/DicebearLogo.099268fa31264f1104f69583f28f8bf6.svg",
     "index.html": "/Lets-Chat/index.html",
     "static/media/UnlockButton.svg": "/Lets-Chat/static/media/UnlockButton.a85fd61caf590b831ea3.svg",
     "static/media/UserIcon.svg": "/Lets-Chat/static/media/UserIcon.189d94598f60e50cf86d.svg",
@@ -27,11 +32,11 @@
     "static/media/BackIcon.svg": "/Lets-Chat/static/media/BackIcon.b3e039ae9157aa03b61b.svg",
     "static/media/SendIcon.svg": "/Lets-Chat/static/media/SendIcon.0fe097c91d52ce87442d.svg",
     "static/media/UploadIcon.svg": "/Lets-Chat/static/media/UploadIcon.9a07054cab993b413297.svg",
-    "main.d3643e9b.css.map": "/Lets-Chat/static/css/main.d3643e9b.css.map",
-    "main.4df9d831.js.map": "/Lets-Chat/static/js/main.4df9d831.js.map"
+    "main.97e0439d.css.map": "/Lets-Chat/static/css/main.97e0439d.css.map",
+    "main.9eedf43a.js.map": "/Lets-Chat/static/js/main.9eedf43a.js.map"
   },
   "entrypoints": [
-    "static/css/main.d3643e9b.css",
-    "static/js/main.4df9d831.js"
+    "static/css/main.97e0439d.css",
+    "static/js/main.9eedf43a.js"
   ]
 }

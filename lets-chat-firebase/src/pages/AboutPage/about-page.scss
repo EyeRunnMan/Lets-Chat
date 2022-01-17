@@ -1,0 +1,88 @@
+@use "../../stylesheets/partials/mixins";
+
+.about-div {
+   display: flex;
+   flex-direction: column;
+   gap: 5em;
+   align-items: center;
+   &__section-heading {
+      font-size: 3rem;
+      font-weight: bold;
+      display: block;
+      text-align: center;
+      @include mixins.respond(mobile) {
+         font-size: 2.2rem;
+      }
+   }
+   &__desc {
+      &-box {
+         margin-top: 3em;
+         width: 75%;
+         @include mixins.respond(mobile) {
+            width: 90%;
+         }
+      }
+      &-para {
+         text-align: center;
+         font-size: 3.2rem;
+         @include mixins.respond(mobile) {
+            font-size: 1.8rem;
+         }
+      }
+   }
+   &__feature {
+      &-box {
+         width: 90%;
+         @include mixins.respond(mobile) {
+            width: 95%;
+         }
+      }
+      &-list {
+         padding: 0;
+         & li {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 1em;
+            list-style: none;
+            font-size: 1.8rem;
+            margin: 0.5em;
+            @include mixins.respond(mobile) {
+               font-size: 1.4rem;
+               align-items: baseline;
+            }
+            & span {
+               font-size: 2.8rem;
+               @include mixins.respond(mobile) {
+                  font-size: 2.2rem;
+               }
+            }
+         }
+      }
+   }
+   &__stack-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin: auto;
+      width: 90%;
+      padding: 0;
+      gap: 3em;
+      & li {
+         margin-top: 2em;
+         list-style: none;
+         font-size: 1.6rem;
+         display: flex;
+         align-items: center;
+         justify-content: flex-end;
+         width: max(5em, 15%);
+         gap: 2em;
+         font-weight: 600;
+         flex-direction: column;
+         flex: 1;
+         & img {
+            width: max(5em, 15%);
+         }
+      }
+   }
+}

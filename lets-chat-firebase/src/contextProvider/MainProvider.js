@@ -4,6 +4,7 @@ import {
    MESSAGES_UPDATED_OTHER,
    SIGN_IN_THE_USER,
    UPDATE_DETAILS,
+   SIGN_OUT_THE_USER,
 } from "../context/MainContext/Main.actions.types";
 import { MainContext } from "../context/MainContext/MainContext";
 import { initialState, MainReducer } from "../context/MainContext/MainReducer";
@@ -17,6 +18,7 @@ function MainProvider() {
    const [mainState, mainDispatch] = useReducer(MainReducer, initialState);
    const other_id = mainState.current_chat_id;
    const isEncrypted = mainState.isEncrypted;
+   const isAuthed = mainState.isAuthed;
    useEffect(() => {
       CryptoTest();
       auth.onAuthStateChanged((user) => {
@@ -41,10 +43,10 @@ function MainProvider() {
                dispatchUpdateMessagesOther
             );
          } else {
-            // mainDispatch({ type: SIGN_OUT_THE_USER });
+            mainDispatch({ type: SIGN_OUT_THE_USER });
          }
       });
-   }, [other_id, isEncrypted]);
+   }, [other_id, isEncrypted, isAuthed]);
    return (
       <MainContext.Provider value={{ mainState, mainDispatch }}>
          <LayoutProvider />

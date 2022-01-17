@@ -6,7 +6,7 @@ const ChatSettings = ({
    theme = "dark",
    onDownloadKeys,
    onUploadKeys,
-   onDeleteAccount,
+   onLogout,
 }) => {
    return (
       <div className="chat-settings-wrapper">
@@ -38,9 +38,9 @@ const ChatSettings = ({
                   className={`chat-settings__icon-upload ${theme}-chat-settings-btn-icon`}
                ></i>
             </label>
-            <button className="chat-settings__button">
-               <span> Delete-Account</span>
-               <i className={`chat-settings__icon-delete`}></i>
+            <button className="chat-settings__button-logout" onClick={onLogout}>
+               <span>Logout</span>
+               {/* <i className={`chat-settings__icon-delete`}></i> */}
             </button>
          </div>
       </div>

@@ -5,7 +5,10 @@ import "./account-settings.scss";
 import AccountInfo from "../../containers/AccountInfo/AccountInfo";
 import ChatSettings from "../../containers/ChatSettings/ChatSettings";
 import { MainContext } from "../../context/MainContext/MainContext";
-import { ADD_FRIEND } from "../../context/MainContext/Main.actions.types";
+import {
+   ADD_FRIEND,
+   LOG_OUT,
+} from "../../context/MainContext/Main.actions.types";
 import DownloadLocalStorage from "../../functions/DownloadLocalStorage";
 
 function AccountSettings({ isVisible }) {
@@ -23,7 +26,7 @@ function AccountSettings({ isVisible }) {
          <ChatSettings
             onDownloadKeys={DownloadLocalStorage}
             onUploadKeys
-            onDeleteAccount
+            onLogout={() => mainDispatch({ type: LOG_OUT })}
          />
       </div>
    );

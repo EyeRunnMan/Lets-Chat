@@ -3,6 +3,7 @@ import { auth } from "../../third-party/firebase/FirebaseApp";
 import AddFriendFirebase from "../../third-party/firebase/functions/AddFriendFirebase";
 import { getCurrentTimeUTC } from "../../third-party/firebase/functions/helper/getCurrentTimeUTC";
 import SendMessageToUser from "../../third-party/firebase/functions/SendMessageToUser";
+import SignoutFirebase from "../../third-party/firebase/functions/SignoutFirebase";
 import SignupFirebase from "../../third-party/firebase/functions/SignupFirebase";
 import VerifyUserInDb from "../../third-party/firebase/functions/VerifyUserInDb";
 import {
@@ -11,10 +12,12 @@ import {
    MESSAGES_UPDATED_OTHER,
    SET_CHAT_WINDOW,
    SIGN_IN,
+   LOG_OUT,
    SIGN_IN_THE_USER,
    UNSET_CHAT_WINDOW,
    UPDATE_DETAILS,
    SEND_MESSAGES,
+   SIGN_OUT_THE_USER,
    TOGGLE_ENCRYPTION,
 } from "./Main.actions.types";
 
@@ -153,6 +156,22 @@ export const MainReducer = (state, action = {}) => {
       }
       case TOGGLE_ENCRYPTION: {
          return { ...state, isEncrypted: !state.isEncrypted };
+      }
+      case LOG_OUT: {
+         SignoutFirebase();
+         return state;
+      }
+      case SIGN_OUT_THE_USER: {
+         return {
+            current_user_name: auth.currentUser
+               ? auth.currentUser.displayName
+               : "loading...",
+            friends: [],
+            current_chat_messages: [],
+            current_chat_id: "",
+            isAuthed: false,
+            isEncrypted: true,
+         };
       }
       default:
          throw new Error();

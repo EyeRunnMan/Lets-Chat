@@ -33,6 +33,23 @@
       &:hover {
          opacity: 0.5;
       }
+      &-logout {
+         display: flex;
+         justify-content: center;
+         border: 0;
+         border-radius: 1em;
+         padding: 0.4em 1em;
+         font-size: 1.8rem;
+         font-weight: bold;
+         min-width: 10em;
+         cursor: pointer;
+         &:last-of-type {
+            width: 12em;
+         }
+         &:hover {
+            opacity: 0.5;
+         }
+      }
    }
 
    &__icon {

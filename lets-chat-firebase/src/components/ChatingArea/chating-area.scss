@@ -5,6 +5,9 @@
    overflow-x: hidden;
    display: flex;
    flex-direction: column-reverse;
+   max-width: 100%;
+   word-wrap: break-word;
+   overflow-x: auto;
    &__msg {
       margin: 0 0 1em 0;
       font-size: 1.6rem;

@@ -14,6 +14,7 @@ import {
    ABOUT_PATH,
 } from "./Routes.consts";
 import AboutPage from "../pages/AboutPage/AboutPage";
+import PageNotFound from "../pages/PageNotFound/PageNotFound";
 
 function AppRouter() {
    const location = useLocation();
@@ -26,6 +27,7 @@ function AppRouter() {
             <Route path={CHAT_WINDOW_PATH} element={<ChatPage />} />
             <Route path={SETTINGS_PATH} element={<ChatPage />} />
             <Route path={ABOUT_PATH} element={<AboutPage />} />
+            <Route path="*" element={<PageNotFound />} />
          </Routes>
          <Footer />
       </div>

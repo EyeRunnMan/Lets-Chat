@@ -1,0 +1,37 @@
+{
+  "files": {
+    "main.css": "/Lets-Chat/static/css/main.8d8da458.css",
+    "main.js": "/Lets-Chat/static/js/main.b5a968a1.js",
+    "static/media/FiraCode-VF.woff": "/Lets-Chat/static/media/FiraCode-VF.d7af67f866f9a5e0a113.woff",
+    "static/media/FiraCode-Bold.woff": "/Lets-Chat/static/media/FiraCode-Bold.e3428b597c378e1fdcb0.woff",
+    "static/media/FiraCode-SemiBold.woff": "/Lets-Chat/static/media/FiraCode-SemiBold.4558fb863ac61e930234.woff",
+    "static/media/FiraCode-Regular.woff": "/Lets-Chat/static/media/FiraCode-Regular.a25d3a54ca0de3944eb7.woff",
+    "static/media/FiraCode-Light.woff": "/Lets-Chat/static/media/FiraCode-Light.a81da37f7831691b78df.woff",
+    "static/media/FiraCode-Medium.woff": "/Lets-Chat/static/media/FiraCode-Medium.97af194ae4a793b66f40.woff",
+    "static/media/FiraCode-VF.woff2": "/Lets-Chat/static/media/FiraCode-VF.7fef988ad994d5988ff3.woff2",
+    "static/media/FiraCode-Bold.woff2": "/Lets-Chat/static/media/FiraCode-Bold.abe3ab87cff86bb05610.woff2",
+    "static/media/FiraCode-SemiBold.woff2": "/Lets-Chat/static/media/FiraCode-SemiBold.564932952cfbb676de45.woff2",
+    "static/media/FiraCode-Regular.woff2": "/Lets-Chat/static/media/FiraCode-Regular.bf5ea52fa0094c7f7621.woff2",
+    "static/media/FiraCode-Light.woff2": "/Lets-Chat/static/media/FiraCode-Light.89b207dfa6dd890c3f41.woff2",
+    "static/media/FiraCode-Medium.woff2": "/Lets-Chat/static/media/FiraCode-Medium.1bc138a84f63b384c3f2.woff2",
+    "index.html": "/Lets-Chat/index.html",
+    "static/media/UnlockButton.svg": "/Lets-Chat/static/media/UnlockButton.a85fd61caf590b831ea3.svg",
+    "static/media/UserIcon.svg": "/Lets-Chat/static/media/UserIcon.189d94598f60e50cf86d.svg",
+    "static/media/LockedIcon.svg": "/Lets-Chat/static/media/LockedIcon.a38a1b56168bd1199de4.svg",
+    "static/media/SaveIcon.svg": "/Lets-Chat/static/media/SaveIcon.d0e96cbf4e7bfd0fe905.svg",
+    "static/media/AddFriendIcon.svg": "/Lets-Chat/static/media/AddFriendIcon.348010c5d33040e022d3.svg",
+    "static/media/ThemeIcon.svg": "/Lets-Chat/static/media/ThemeIcon.a8233350d80006408af1.svg",
+    "static/media/ChatIcon.svg": "/Lets-Chat/static/media/ChatIcon.c603bd6a2104fcdc80e9.svg",
+    "static/media/AboutIcon.svg": "/Lets-Chat/static/media/AboutIcon.dd40e2757199a91f39a4.svg",
+    "static/media/DeleteIcon.svg": "/Lets-Chat/static/media/DeleteIcon.a53e22036f5f02bda3f2.svg",
+    "static/media/BackIcon.svg": "/Lets-Chat/static/media/BackIcon.b3e039ae9157aa03b61b.svg",
+    "static/media/SendIcon.svg": "/Lets-Chat/static/media/SendIcon.0fe097c91d52ce87442d.svg",
+    "static/media/UploadIcon.svg": "/Lets-Chat/static/media/UploadIcon.9a07054cab993b413297.svg",
+    "main.8d8da458.css.map": "/Lets-Chat/static/css/main.8d8da458.css.map",
+    "main.b5a968a1.js.map": "/Lets-Chat/static/js/main.b5a968a1.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8d8da458.css",
+    "static/js/main.b5a968a1.js"
+  ]
+}

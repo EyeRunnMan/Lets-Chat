@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Lets-Chat/static/css/main.8d8da458.css",
-    "main.js": "/Lets-Chat/static/js/main.b5a968a1.js",
+    "main.css": "/Lets-Chat/static/css/main.d3643e9b.css",
+    "main.js": "/Lets-Chat/static/js/main.4df9d831.js",
     "static/media/FiraCode-VF.woff": "/Lets-Chat/static/media/FiraCode-VF.d7af67f866f9a5e0a113.woff",
     "static/media/FiraCode-Bold.woff": "/Lets-Chat/static/media/FiraCode-Bold.e3428b597c378e1fdcb0.woff",
     "static/media/FiraCode-SemiBold.woff": "/Lets-Chat/static/media/FiraCode-SemiBold.4558fb863ac61e930234.woff",
@@ -27,11 +27,11 @@
     "static/media/BackIcon.svg": "/Lets-Chat/static/media/BackIcon.b3e039ae9157aa03b61b.svg",
     "static/media/SendIcon.svg": "/Lets-Chat/static/media/SendIcon.0fe097c91d52ce87442d.svg",
     "static/media/UploadIcon.svg": "/Lets-Chat/static/media/UploadIcon.9a07054cab993b413297.svg",
-    "main.8d8da458.css.map": "/Lets-Chat/static/css/main.8d8da458.css.map",
-    "main.b5a968a1.js.map": "/Lets-Chat/static/js/main.b5a968a1.js.map"
+    "main.d3643e9b.css.map": "/Lets-Chat/static/css/main.d3643e9b.css.map",
+    "main.4df9d831.js.map": "/Lets-Chat/static/js/main.4df9d831.js.map"
   },
   "entrypoints": [
-    "static/css/main.8d8da458.css",
-    "static/js/main.b5a968a1.js"
+    "static/css/main.d3643e9b.css",
+    "static/js/main.4df9d831.js"
   ]
 }

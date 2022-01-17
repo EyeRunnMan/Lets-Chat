@@ -7,7 +7,13 @@ import {
 } from "../../router/Routes.consts";
 import "./navbar.scss";
 
-const NavIcon = ({ active, link, theme, type, OnClick = () => {} }) => {
+const NavIcon = ({
+   active,
+   link,
+   theme = "dark",
+   type,
+   OnClick = () => {},
+}) => {
    return (
       <button
          style={{ border: 0, backgroundColor: "transparent" }}
@@ -22,7 +28,12 @@ const NavIcon = ({ active, link, theme, type, OnClick = () => {} }) => {
    );
 };
 
-const NavBar = ({ theme = "dark", isVisible = true }) => {
+const NavBar = ({
+   theme = "dark",
+   isVisible = true,
+   isSignedIn = false,
+   OnSignin,
+}) => {
    const hiddenClass = isVisible ? "" : "hidden";
    const navigate = useNavigate();
    const { pathname } = useLocation();
@@ -36,12 +47,35 @@ const NavBar = ({ theme = "dark", isVisible = true }) => {
                </h1>
             </a>
             <div className="navbar__nav-icons">
-               <NavIcon theme={theme} type="info" />
-               <NavIcon theme={theme} type="chat" />
+               <NavIcon
+                  theme={theme}
+                  type="info"
+                  OnClick={() => {
+                     navigate(ABOUT_PATH);
+                  }}
+                  active={pathname === ABOUT_PATH}
+               />
+               {isSignedIn ? (
+                  <NavIcon
+                     theme={theme}
+                     type="chat"
+                     OnClick={() => {
+                        navigate(CHATS_PATH);
+                     }}
+                     active={pathname === CHATS_PATH}
+                  />
+               ) : (
+                  <button
+                     onClick={OnSignin}
+                     className={`navbar__signin-btn ${hiddenClass} ${theme}-nav-icons`}
+                  >
+                     Signin
+                  </button>
+               )}
                {/* <NavIcon theme={theme} type="account" /> */}
             </div>
             <a href="/#">
-               <div className={`navbar__icon-theme ${theme}-theme-icon`}></div>
+               <div className={`navbar__icon-theme ${"dark"}-theme-icon`}></div>
             </a>
          </div>
          <div
@@ -55,22 +89,33 @@ const NavBar = ({ theme = "dark", isVisible = true }) => {
                }}
                active={pathname === ABOUT_PATH}
             />
-            <NavIcon
-               theme={theme}
-               type="chat"
-               OnClick={() => {
-                  navigate(CHATS_PATH);
-               }}
-               active={pathname === CHATS_PATH}
-            />
-            <NavIcon
-               theme={theme}
-               type="account"
-               OnClick={() => {
-                  navigate(SETTINGS_PATH);
-               }}
-               active={pathname === SETTINGS_PATH}
-            />
+            {isSignedIn ? (
+               <>
+                  <NavIcon
+                     theme={theme}
+                     type="chat"
+                     OnClick={() => {
+                        navigate(CHATS_PATH);
+                     }}
+                     active={pathname === CHATS_PATH}
+                  />
+                  <NavIcon
+                     theme={theme}
+                     type="account"
+                     OnClick={() => {
+                        navigate(SETTINGS_PATH);
+                     }}
+                     active={pathname === SETTINGS_PATH}
+                  />
+               </>
+            ) : (
+               <button
+                  onClick={OnSignin}
+                  className={`navbar__signin-btn ${hiddenClass} ${theme}-nav-icons`}
+               >
+                  Signin
+               </button>
+            )}
          </div>
       </nav>
    );

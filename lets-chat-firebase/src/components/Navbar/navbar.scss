@@ -47,7 +47,12 @@
          }
       }
    }
-
+   &__signin-btn {
+      border: none;
+      font-size: large;
+      border-radius: 0.5em;
+      cursor: pointer;
+   }
    &__icon {
       @mixin nav-icons-mx {
          display: block;

@@ -10,8 +10,11 @@ import {
    LOG_OUT,
 } from "../../context/MainContext/Main.actions.types";
 import DownloadLocalStorage from "../../functions/DownloadLocalStorage";
+import { useNavigate } from "react-router";
+import { ABOUT_PATH } from "../../router/Routes.consts";
 
 function AccountSettings({ isVisible }) {
+   const navigate = useNavigate();
    const hiddenClass = isVisible ? "" : "hidden";
    const { mainState, mainDispatch } = useContext(MainContext);
    const { current_user_name } = mainState;
@@ -26,7 +29,10 @@ function AccountSettings({ isVisible }) {
          <ChatSettings
             onDownloadKeys={DownloadLocalStorage}
             onUploadKeys
-            onLogout={() => mainDispatch({ type: LOG_OUT })}
+            onLogout={() => {
+               navigate(ABOUT_PATH);
+               mainDispatch({ type: LOG_OUT });
+            }}
          />
       </div>
    );

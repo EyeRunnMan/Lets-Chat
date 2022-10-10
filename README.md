@@ -5,5 +5,3 @@ A hacker/programmer themed Chat app made with react and a bunch of cool features
 > React , HTML , CSS , Firebase , Dicebear
 
 ![image](https://user-images.githubusercontent.com/46531095/193462345-ac72ed79-b2e6-4d77-82e6-e895e26d01b3.png)
-
- f

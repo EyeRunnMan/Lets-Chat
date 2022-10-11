@@ -3,7 +3,7 @@ import "./account-info.scss";
 
 import AddFriendInputBar from "../../components/AddFriendInputBar/AddFriendInputBar";
 
-const AccountInfo = ({ name = "ASDf", AddFriend }) => {
+const AccountInfo = ({ name = "ASDF", AddFriend }) => {
    return (
       <div className="account-info">
          <img
